@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ab9b9ca6dca56c6185b33ade35558ff",
+    "content-hash": "8a2ddd3b9bff666079e9ef62cffbb424",
     "packages": [
         {
             "name": "fmihel/php-lib",
-            "version": "v0.3.1",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fmihel/php-lib.git",
-                "reference": "a4d932bd5d268610af4b8dee40c1f9b4b7e85b71"
+                "reference": "53e702c081a247b6f063ebe281f78c40afeabddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/php-lib/zipball/a4d932bd5d268610af4b8dee40c1f9b4b7e85b71",
-                "reference": "a4d932bd5d268610af4b8dee40c1f9b4b7e85b71",
+                "url": "https://api.github.com/repos/fmihel/php-lib/zipball/53e702c081a247b6f063ebe281f78c40afeabddb",
+                "reference": "53e702c081a247b6f063ebe281f78c40afeabddb",
                 "shasum": ""
             },
             "require-dev": {
@@ -40,24 +40,24 @@
                 }
             ],
             "description": "php,lib,library",
-            "time": "2020-01-24T10:00:53+00:00"
+            "time": "2020-01-28T13:00:39+00:00"
         },
         {
             "name": "fmihel/php-router",
-            "version": "v1.1.7",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fmihel/php-router.git",
-                "reference": "91ab2bf19b0a3655d4bd93c9a0b0606d35c051da"
+                "reference": "605042305cd4c81caa11c0b796654af9c726287e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/php-router/zipball/91ab2bf19b0a3655d4bd93c9a0b0606d35c051da",
-                "reference": "91ab2bf19b0a3655d4bd93c9a0b0606d35c051da",
+                "url": "https://api.github.com/repos/fmihel/php-router/zipball/605042305cd4c81caa11c0b796654af9c726287e",
+                "reference": "605042305cd4c81caa11c0b796654af9c726287e",
                 "shasum": ""
             },
             "require": {
-                "fmihel/php-lib": "^0.3.1"
+                "fmihel/php-lib": "^0.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5"
@@ -79,13 +79,15 @@
                 }
             ],
             "description": "php,router",
-            "time": "2020-01-24T10:49:26+00:00"
+            "time": "2020-01-29T12:25:57+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fmihel/php-router": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

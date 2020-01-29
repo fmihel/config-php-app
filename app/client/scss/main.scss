@@ -9,7 +9,28 @@
     height:100%;
     border:1px solid 0;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
   
+}
+
+#up {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+#down {
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+    overflow-x:hidden;
+    overflow-y: auto;
 }
 
 .row{

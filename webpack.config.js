@@ -97,7 +97,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            components: path.resolve(__dirname, 'app/client/source/components/'),
+            COMPONENTS: path.resolve(__dirname, 'app/client/source/components/'),
+            REDUX: path.resolve(__dirname, 'app/client/redux/'),
         },
     },
     module: {

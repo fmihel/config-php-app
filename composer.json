@@ -1,5 +1,5 @@
 {
     "require": {
-        "fmihel/php-router": "^1.1"
+        "fmihel/php-router": "dev-master"
     }
 }

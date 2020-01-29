@@ -1,5 +1,5 @@
 import React from 'react';
-import { ut } from 'fmihel-browser-lib';
+import { ut, binds } from 'fmihel-browser-lib';
 import {
     NavLink as Link,
 } from 'react-router-dom';
@@ -7,21 +7,33 @@ import {
 export default class NavMenuItem extends React.Component {
     constructor(p) {
         super(p);
+        binds(this, 'doClick');
+    }
+
+    doClick() {
+        if (this.props.onClick) { this.props.onClick({ id: this.props.id, sender: this }); }
     }
 
     render() {
         const {
             id, caption, addClass, link, active, exact,
+            disabled,
         } = this.props;
         return (
-            <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" >
+            <li
+                id={id}
+                className={`nav-item ${active}` ? 'active' : ''}
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                onClick = {this.doClick}
+            >
                 <Link
-                    id={id}
                     to ={link}
                     exact = {exact}
-                    className={`nav-link ${active ? 'active ' : ''}${addClass}`}
+                    className={ `nav-link ${disabled ? 'disabled ' : ' '}${addClass}` }
                 >
                     {caption}
+
                 </Link>
             </li>
         );
@@ -32,6 +44,8 @@ NavMenuItem.defaultProps = {
     exact: false,
     caption: '',
     addClass: '',
-    link: '',
+    link: '#',
     active: false,
+    disabled: false,
+    onClick: undefined,
 };
