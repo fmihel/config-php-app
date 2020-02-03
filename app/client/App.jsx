@@ -70,9 +70,9 @@ class App extends React.Component {
 
 App.defaultProps = {
     menu: {
-        proverka: [
+        Loading: [
             {
-                id: 'proverka',
+                id: 'Loading',
                 caption: '..',
                 link: '/',
                 component: pages.Proverka,

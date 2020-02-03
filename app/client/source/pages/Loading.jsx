@@ -1,16 +1,16 @@
 import React from 'react';
 // import { flex, binds } from 'fmihel-browser-lib'
-export default class Proverka extends React.Component {
+export default class Loading extends React.Component {
     constructor(p) {
         super(p);
     }
 
     render() {
         return (
-            <div>Proverka</div>
+            <div>Loading...</div>
         );
     }
 }
-Proverka.defaultProps = {
+Loading.defaultProps = {
 // default
 };

@@ -8,7 +8,7 @@ const autorize = storage.get('autorize', {
 const init = {
     ui: {
         scheme: 'dark',
-        type: autorize.enable ? 'proverka' : 'noAutorize', //
+        type: autorize.enable ? 'Loading' : 'noAutorize', //
         state: 'idle',
     },
     debug: {
