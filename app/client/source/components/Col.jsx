@@ -8,14 +8,13 @@ export default class Col extends React.Component {
     render() {
         return (
 
-            <div className= {`${this.props.col} ${this.props.addClass}`} style={this.props.style}>
+            <div className= {`col ${this.props.addClass}`} style={this.props.style}>
                 {this.props.children}
             </div>
         );
     }
 }
 Col.defaultProps = {
-    col: 'col',
     addClass: '',
     style: {},
 };

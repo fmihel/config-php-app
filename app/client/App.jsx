@@ -7,14 +7,14 @@ import Row from 'COMPONENTS/Row.jsx';
 import Col from 'COMPONENTS/Col.jsx';
 import Nav from 'COMPONENTS/Nav.jsx';
 import NavMenu from 'COMPONENTS/NavMenu.jsx';
+import Debug from 'COMPONENTS/DebugInfo.jsx';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    NavLink as Link,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import logout from 'REDUX/logout/action';
+import logout from 'REDUX/Logout/action';
 import pages from './source/pages';
 
 class App extends React.Component {
@@ -35,9 +35,8 @@ class App extends React.Component {
     render() {
         const { menu, reduxState } = this.props;
         const { ui } = reduxState;
-
         return (
-            <Router>
+            <Router basename={BASEPATH_HTML}>
                 <div id='up' >
                     <Container>
                         <Row>
@@ -62,6 +61,7 @@ class App extends React.Component {
                         </Row>
                     </Container>
                 </div>
+                <Debug/>
             </Router>
         );
     }

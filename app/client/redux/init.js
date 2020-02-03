@@ -11,6 +11,12 @@ const init = {
         type: autorize.enable ? 'proverka' : 'noAutorize', //
         state: 'idle',
     },
+    debug: {
+        list: {
+            debug: 'text',
+            next: 'next',
+        },
+    },
     autorize: {
         enable: false,
         login: '',

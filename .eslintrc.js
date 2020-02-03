@@ -26,7 +26,9 @@ module.exports = {
         }, 
     },    
     "globals": {
-        "$": true
+        "$": true,
+        "BASEPATH_HTML":true,
+        "PHP_ROUTER_ADDR":true
         
     },
     "rules": {

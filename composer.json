@@ -1,5 +1,6 @@
 {
     "require": {
-        "fmihel/php-router": "dev-master"
+        "fmihel/php-router": "dev-master",
+        "fmihel/console-log": "^0.0.1"
     }
 }

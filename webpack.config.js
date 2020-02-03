@@ -20,9 +20,11 @@ const TEMPLATE_PATH = `${SOURCE_PATH}template/`;
 // Папка с медиа файлами
 const MEDIA_PATH = `${SOURCE_PATH}media/`;
 // Путь к корневому файлу роутера (если на )
-const PHP_ROUTER_ADDR = isDevelopment ? 'http://work/fmihel/config-php-app/app/server/' : '/dist/index.php';
+const PHP_ROUTER_ADDR = isDevelopment ? 'http://work/fmihel/config-php-app/app/server/' : './index.php';
 // Путь к модулям composer (если меняем from,то изменить и в исходнике  index.php)
 const PHP_VENDOR_REPLACE = { from: '/../../vendor/autoload.php', to: '/vendor/autoload.php' };
+// установка базового пути для react-router и загрузочной страницы index.html
+const BASEPATH_HTML   = isDevelopment?'':'/dist/';
 
 const PORT = 3000;
 
@@ -50,34 +52,48 @@ const plugins = [
     }),
     new HtmlWebPackPlugin({
         template: `${TEMPLATE_PATH}index.html`,
-        filename: './index.html',
     }),
     new CopyWebpackPlugin(CopyWebpackPluginList),
-    new ReplaceBefore({
-
-        exclude: /node_modules/,
-        include: 'router.config.js',
-        values: {
-            PHP_ROUTER_ADDR,
-
-        },
-    }),
+    new webpack.DefinePlugin({
+        PHP_ROUTER_ADDR: JSON.stringify(PHP_ROUTER_ADDR),
+        BASEPATH_HTML: JSON.stringify(BASEPATH_HTML),
+    }),    
 ];
 
+let replaceAfterRules = [];
+
 if (!isDevelopment) {
-    plugins.push(
-        new ReplaceAfter([{
+    replaceAfterRules.push(
+        {
             dir: PUBLIC_PATH.substring(2),
             files: ['index.php'],
             rules: [{
                 search: PHP_VENDOR_REPLACE.from,
                 replace: PHP_VENDOR_REPLACE.to,
             }],
-        }]),
+        },{
+            dir: PUBLIC_PATH.substring(2),
+            files: ['.htaccess'],
+            rules: [{
+                search: 'mod_headers.c',
+                replace: 'disabled_mod_headers.c',
+            },{
+                search: 'BASEPATH_HTML',
+                replace: BASEPATH_HTML,
+            }],
+        },{
+            dir: PUBLIC_PATH.substring(2),
+            files: [ 'index.html'],
+            rules: [{
+                search: '<base href=""/>',
+                replace: '<base href="'+BASEPATH_HTML+'"/>',
+            }],
+        }        
+        
     );
-}
+};
 
-
+plugins.push(new ReplaceAfter(replaceAfterRules));
 
 module.exports = {
     mode: (isDevelopment || includeDebugInfo ? 'development' : 'production'),
@@ -135,7 +151,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
-            },
+            }
         ],
     },
     plugins,

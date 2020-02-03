@@ -1,5 +1,6 @@
 <?php
 use fmihel\router\Route;
+use fmihel\console;
 
 class Autorize extends Route{
     
@@ -54,6 +55,8 @@ class Autorize extends Route{
         return false;
     }
     public function route_Autorize($autorize){
+        console::log($autorize);
+        
         self::init($autorize);
         return $this->ok(self::data());
     }

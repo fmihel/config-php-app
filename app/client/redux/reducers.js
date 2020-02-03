@@ -2,7 +2,7 @@ import init from './init';
 
 const modules = [];
 // set folder name which consist action ----------------------
-const paths = ['autorize', 'logout'];
+const paths = ['Autorize', 'Logout', 'Debug'];
 // -----------------------------------------------------------
 paths.forEach((path) => {
     import(`./${path}/reducer`)
