@@ -7,7 +7,7 @@ import logout from 'REDUX/Logout/action';
 router().on('before', (e) => {
     if (e.id !== 'autorize') {
         const state = store.getState();
-        e.data.autorize = state.autorize;
+        e.autorize = state.autorize;
     }
 });
 

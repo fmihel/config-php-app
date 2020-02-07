@@ -6,10 +6,10 @@
     function onBefore(&$data){
 
         if ($data['id']!=='autorize'){
-             $autorize = $data['data']['autorize'];
-             unset($data['data']['autorize']);
+             $autorize = $data['autorize'];
+             unset($data['autorize']);
 
-             if (!Autorize::init($autorize))
+             if (!Autorize::init($autorize,'bool'))
                  return Route::typeError('error autorize',0,['autorize'=>['enable'=>false]]);
         }
         
