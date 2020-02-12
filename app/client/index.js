@@ -1,6 +1,7 @@
 import './scss/main.scss';
 import './router.config';
 import './router.autorize';
+import '@fortawesome/fontawesome-free/js/all';
 import React from 'react';
 import ReacDOM from 'react-dom';
 import { DOM, storage } from 'fmihel-browser-lib';

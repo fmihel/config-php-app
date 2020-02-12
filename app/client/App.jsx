@@ -15,7 +15,8 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import logout from 'REDUX/Logout/action';
-import pages from './source/pages';
+import pages from './pages';
+import Waiter from 'COMPONENTS/waiter/Waiter.jsx';
 
 class App extends React.Component {
     constructor(p) {
@@ -56,12 +57,12 @@ class App extends React.Component {
                                 <Switch>
                                     {menu[ui.type].map((item) => <Route key={item.id} exact={item.exact} path={item.link} component={item.component} />)}
                                 </Switch>
-
                             </Col>
                         </Row>
                     </Container>
                 </div>
                 <Debug/>
+                <Waiter show={ui.state !== 'idle'}/>
             </Router>
         );
     }

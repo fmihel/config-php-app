@@ -1,20 +1,20 @@
 import React from 'react';
 // import {flex,binds} from 'fmihel-browser-lib';
-export default class Row extends React.Component {
+export default class Col extends React.Component {
     constructor(p) {
         super(p);
     }
 
     render() {
+        const { css, style } = this.props;
         return (
-
-            <div className= {`row ${this.props.addClass}`} style={this.props.style}>
+            <div className= {css || 'col'} style={style}>
                 {this.props.children}
             </div>
         );
     }
 }
-Row.defaultProps = {
-    addClass: '',
+Col.defaultProps = {
+    css: '',
     style: {},
 };

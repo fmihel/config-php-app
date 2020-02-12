@@ -26,7 +26,7 @@ const PHP_VENDOR_REPLACE = { from: '/../../vendor/autoload.php', to: '/vendor/au
 // установка базового пути для react-router и загрузочной страницы index.html
 const BASEPATH_HTML   = isDevelopment?'':'/dist/';
 
-const PORT = 3000;
+const PORT = 3010;
 
 
 const CopyWebpackPluginList = [
@@ -35,7 +35,7 @@ const CopyWebpackPluginList = [
 if (isDevelopment) {
     // CopyWebpackPluginList.push({ from: 'server' });
 } else {
-    CopyWebpackPluginList.push({ from: 'app/server', ignore: ['router_paths.php'] });
+    CopyWebpackPluginList.push({ from: 'app/server', ignore: ['router_paths.php','config.php'] });
     if (isBuildFull) {
         CopyWebpackPluginList.push({ from: 'vendor', to: 'vendor' });
     } else {
@@ -113,7 +113,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            COMPONENTS: path.resolve(__dirname, 'app/client/source/components/'),
+            COMPONENTS: path.resolve(__dirname, 'app/client/components/'),
             REDUX: path.resolve(__dirname, 'app/client/redux/'),
         },
     },

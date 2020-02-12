@@ -18,5 +18,5 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 // Serve the files on port 3000.
 app.listen(webpackConfig.devServer.port, () => {
-    console.log('Example app listening on: http://localhost:3000/');
+    console.log(`Example app listening on: http://localhost:${webpackConfig.devServer.port}/`);
 });
