@@ -1,10 +1,10 @@
 import React from 'react';
 import { binds } from 'fmihel-browser-lib';
 import { connect } from 'react-redux';
-import doAutorize from 'REDUX/Autorize/action';
 import Container from 'COMPONENTS/Container.jsx';
 import Row from 'COMPONENTS/Row.jsx';
 import Col from 'COMPONENTS/Col.jsx';
+import doAutorize from './actions/Autorize';
 
 // import actDebug from 'REDUX/Debug/action';
 

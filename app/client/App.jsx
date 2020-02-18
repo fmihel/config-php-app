@@ -8,6 +8,7 @@ import Col from 'COMPONENTS/Col.jsx';
 import Nav from 'COMPONENTS/Nav.jsx';
 import NavMenu from 'COMPONENTS/NavMenu.jsx';
 import Debug from 'COMPONENTS/DebugInfo.jsx';
+import Waiter from 'COMPONENTS/waiter/Waiter.jsx';
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,7 +17,6 @@ import {
 import { connect } from 'react-redux';
 import logout from 'REDUX/Logout/action';
 import pages from './pages';
-import Waiter from 'COMPONENTS/waiter/Waiter.jsx';
 
 class App extends React.Component {
     constructor(p) {

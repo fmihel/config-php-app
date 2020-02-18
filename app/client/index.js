@@ -7,7 +7,7 @@ import ReacDOM from 'react-dom';
 import { DOM, storage } from 'fmihel-browser-lib';
 import { Provider } from 'react-redux';
 import store from 'REDUX/store';
-import autorize from 'REDUX/Autorize/action';
+import autorize from './pages/Autorize/actions/Autorize/action';
 import App from './App.jsx';
 
 $(() => {
