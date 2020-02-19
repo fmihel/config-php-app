@@ -1,10 +1,6 @@
-import init from './init';
-import Debug from './Debug/reducer';
-import Logout from './Logout/reducer';
+import init from './data';
 
-
-const modules = [Debug, Logout];
-
+const modules = [];
 
 export const addReducer = (...args) => {
     args.forEach((module) => {

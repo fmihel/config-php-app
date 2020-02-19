@@ -7,7 +7,7 @@ import Row from 'COMPONENTS/Row.jsx';
 import Col from 'COMPONENTS/Col.jsx';
 import Nav from 'COMPONENTS/Nav.jsx';
 import NavMenu from 'COMPONENTS/NavMenu.jsx';
-import Debug from 'COMPONENTS/DebugInfo.jsx';
+import Debug from 'COMPONENTS/debug/DebugInfo.jsx';
 import Waiter from 'COMPONENTS/waiter/Waiter.jsx';
 import {
     BrowserRouter as Router,
@@ -15,7 +15,7 @@ import {
     Route,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import logout from 'REDUX/Logout/action';
+import logout from './pages/Autorize/actions/Logout';
 import pages from './pages';
 
 class App extends React.Component {

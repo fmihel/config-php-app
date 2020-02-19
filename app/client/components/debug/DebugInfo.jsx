@@ -1,51 +1,9 @@
-import React, { Fragment } from 'react';
-import { flex, JX, DOM } from 'fmihel-browser-lib';
+import './data';
+import React from 'react';
+import { JX, DOM } from 'fmihel-browser-lib';
 import { connect } from 'react-redux';
-import actDebug from 'REDUX/Debug/action';
-// import React from 'react';
-// import { flex, binds } from 'fmihel-browser-lib'
-class DebugItem extends React.Component {
-    constructor(p) {
-        super(p);
-    }
-
-    render() {
-        return (
-            <div style={{ ...flex('horiz') }}>
-                <div style={{ ...flex(), minWidth: '50px' }}>{this.props.name}</div>
-                <div style={{ ...flex() }}>{this.props.value}</div>
-            </div>
-        );
-    }
-}
-DebugItem.defaultProps = {
-    name: 'name',
-    value: 'value',
-};
-
-class DebugList extends React.Component {
-    constructor(p) {
-        super(p);
-    }
-
-    render() {
-        const { list } = this.props;
-
-        const names = Object.keys(list);
-
-        return (
-            <div >
-                {names.map((name) => <DebugItem key={name} name={name} value={list[name]}/>)}
-            </div>
-        );
-    }
-}
-
-DebugList.defaultProps = {
-    list: {
-        name: 'mean',
-    },
-};
+import actDebug from './actions/Debug';
+import DebugList from './DebugList.jsx';
 
 class DebugInfo extends React.Component {
     constructor(p) {

@@ -26,7 +26,7 @@ const PHP_VENDOR_REPLACE = { from: '/../../vendor/autoload.php', to: '/vendor/au
 // установка базового пути для react-router и загрузочной страницы index.html
 const BASEPATH_HTML   = isDevelopment?'':'/dist/';
 
-const PORT = 3010;
+const PORT = 3000;
 
 
 const CopyWebpackPluginList = [

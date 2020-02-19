@@ -1,3 +1,4 @@
+import './data';
 import React from 'react';
 import { binds } from 'fmihel-browser-lib';
 import { connect } from 'react-redux';

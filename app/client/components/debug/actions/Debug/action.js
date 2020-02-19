@@ -1,5 +1,5 @@
 import * as consts from './consts';
-import store from '../store';
+import store from 'REDUX/store';
 
 const doAction = (list) => (dispatch) => {
     dispatch({

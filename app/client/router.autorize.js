@@ -1,7 +1,7 @@
 import { ut } from 'fmihel-browser-lib';
 import router from 'fmihel-php-router-client';
 import store from 'REDUX/store';
-import logout from 'REDUX/Logout/action';
+import logout from './pages/Autorize/actions/Logout';
 
 // в каждый ajax запрос присоединяем информацию об авторизации
 router().on('before', (e) => {

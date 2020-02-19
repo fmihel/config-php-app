@@ -1,6 +1,6 @@
 import { storage } from 'fmihel-browser-lib';
+import store from 'REDUX/store';
 import * as consts from './consts';
-import store from '../store';
 
 const doAction = () => (dispatch) => {
     storage.del('autorize');
