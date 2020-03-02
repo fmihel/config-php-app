@@ -9,13 +9,11 @@ router().on('before', (e) => {
         const state = store.getState();
         e.autorize = state.autorize;
     }
-    console.info('before');
 });
 
 
 // пришедшая информация проевряется на предмет авторизована ли она, если нет то logout
 router().on('after', (from) => {
-    console.info('after');
     // eslint-disable-next-line eqeqeq
     if ((from.res == 0) && (ut.get(from, 'data', 'autorize', 'enable', true) === false)) {
         logout();

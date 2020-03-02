@@ -1,6 +1,6 @@
-import { attach } from 'REDUX/data';
+import data from 'REDUX/data';
 
-attach({
+data.attach({
     autorize: {
         enable: false,
         login: '',

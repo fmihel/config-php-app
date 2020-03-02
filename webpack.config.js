@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { defArg } = require('fmihel-server-lib');
 const ReplaceBefore = require('webpack-plugin-replace');
 const ReplaceAfter = require('replace-in-file-webpack-plugin');
+const local = require('./webpack.local');
 
 const isDevelopment = defArg('dev');
 const includeDebugInfo = defArg('idi');
@@ -20,7 +21,9 @@ const TEMPLATE_PATH = `${SOURCE_PATH}template/`;
 // Папка с медиа файлами
 const MEDIA_PATH = `${SOURCE_PATH}media/`;
 // Путь к корневому файлу роутера (если на )
-const PHP_ROUTER_ADDR = isDevelopment ? 'http://work/fmihel/config-php-app/app/server/' : './index.php';
+//const PHP_ROUTER_ADDR = isDevelopment ? 'http://work/fmihel/config-php-app/app/server/' : './index.php';
+const PHP_ROUTER_ADDR = isDevelopment ? local.PHP_ROUTER_ADDR : './index.php';
+
 // Путь к модулям composer (если меняем from,то изменить и в исходнике  index.php)
 const PHP_VENDOR_REPLACE = { from: '/../../vendor/autoload.php', to: '/vendor/autoload.php' };
 // установка базового пути для react-router и загрузочной страницы index.html
@@ -49,6 +52,8 @@ const plugins = [
     new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
+        webpack:path.resolve(path.join(__dirname, 'app/client/webpack.define'))
+
     }),
     new HtmlWebPackPlugin({
         template: `${TEMPLATE_PATH}index.html`,
@@ -57,6 +62,7 @@ const plugins = [
     new webpack.DefinePlugin({
         PHP_ROUTER_ADDR: JSON.stringify(PHP_ROUTER_ADDR),
         BASEPATH_HTML: JSON.stringify(BASEPATH_HTML),
+        WEBPACK_IS_DEV_VALUE: isDevelopment,
     }),    
 ];
 
