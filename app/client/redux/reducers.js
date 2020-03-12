@@ -20,6 +20,8 @@ export const addReducer = (...args) => {
 const reducers = (store = init, action) => {
     const mod = modules.find((m) => m.is(action));
     if (mod) return mod.reducer(store, action);
+    if (webpack.isDevelopment) { console.error(`not define reducer for [${action.type}]. `); }
+
     return store;
 };
 
