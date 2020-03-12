@@ -49,6 +49,7 @@ const plugins = [
     new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
+        webpack:path.resolve(path.join(__dirname, 'app/client/webpack.define'))
     }),
     new HtmlWebPackPlugin({
         template: `${TEMPLATE_PATH}index.html`,
@@ -57,6 +58,7 @@ const plugins = [
     new webpack.DefinePlugin({
         PHP_ROUTER_ADDR: JSON.stringify(PHP_ROUTER_ADDR),
         BASEPATH_HTML: JSON.stringify(BASEPATH_HTML),
+        WEBPACK_IS_DEV_VALUE: isDevelopment,
     }),    
 ];
 

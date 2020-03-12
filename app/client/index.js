@@ -1,3 +1,4 @@
+import './polyfills';
 import './scss/main.scss';
 import './router.config';
 import './router.autorize';

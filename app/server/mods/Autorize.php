@@ -1,9 +1,10 @@
 <?php
 use fmihel\router\Route;
 use fmihel\console;
+use fmihel\lib\Config;
 
 class Autorize extends Route{
-    
+    public static  $users;
     private static $data = [
         'enable'    =>false,
         'login'     =>'',
@@ -61,4 +62,6 @@ class Autorize extends Route{
         return $this->ok(self::data());
     }
 };
+
+Autorize::$users = Config::get('users');            
 ?>

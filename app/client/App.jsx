@@ -34,8 +34,8 @@ class App extends React.Component {
     }
 
     render() {
-        const { menu, reduxState } = this.props;
-        const { ui } = reduxState;
+        const { menu, redux } = this.props;
+        const { ui } = redux;
         return (
             <Router basename={BASEPATH_HTML}>
                 <div id='up' >
@@ -61,7 +61,7 @@ class App extends React.Component {
                         </Row>
                     </Container>
                 </div>
-                <Debug/>
+                {webpack.isDevelopment && <Debug/> }
                 <Waiter show={ui.state !== 'idle'}/>
             </Router>
         );
@@ -116,7 +116,7 @@ App.defaultProps = {
 
 
 const mapStateToProps = (state) => ({
-    reduxState: state,
+    redux: state,
 });
 
 

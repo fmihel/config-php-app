@@ -9,7 +9,7 @@ class Send extends Route{
             error_log('['.__FILE__.':'.__LINE__.'] '.'recv send');
             error_log('['.__FILE__.':'.__LINE__.'] '.print_r($data,true));
             error_log('['.__FILE__.':'.__LINE__.'] '.'------------------------');
-            return $this->ok(['return'=>"string"]);
+            return $this->ok(['msg'=>$data['msg']]);
     }    
 }
 

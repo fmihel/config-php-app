@@ -28,7 +28,8 @@ module.exports = {
     "globals": {
         "$": true,
         "BASEPATH_HTML":true,
-        "PHP_ROUTER_ADDR":true
+        "PHP_ROUTER_ADDR":true,
+        "webpack":true
         
     },
     "rules": {

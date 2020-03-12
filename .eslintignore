@@ -1,2 +1,3 @@
 /app/public/
 webpack.config.js
+/app/client/polyfills.js

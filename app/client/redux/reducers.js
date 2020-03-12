@@ -1,4 +1,4 @@
-import init from './data';
+import init from './init';
 
 const modules = [];
 
