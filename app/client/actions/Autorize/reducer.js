@@ -1,35 +1,37 @@
-import storing from 'REDUX/storing';
+import redux from 'REDUX';
 import * as consts from './consts';
 
 const is = (action) => [consts.AUTORIZE, consts.AUTORIZE_OK, consts.AUTORIZE_ERR].indexOf(action.type) >= 0;
-const reducer = (store, action) => {
+const reducer = (state, action) => {
     if (action.type === consts.AUTORIZE) {
-        return storing(store).idle(false).store;
+        return redux.change(state).idle(false).state;
     }
 
 
     if (action.type === consts.AUTORIZE_OK) {
-        return storing(store)
+       return redux.change(state)
             .idle(true)
-            .assignTo('ui', { type: 'autorize' })
-            .assignTo('autorize', { ...action.payload, msg: undefined })
-            .store;
+            .extend({ui: { type: 'autorize' }})
+            .extend({autorize: { ...action.payload, msg: undefined} })
+            .state;
     }
 
     if (action.type === consts.AUTORIZE_ERR) {
-        return storing(store)
+        return redux.change(state)
             .idle(true)
-            .assignTo('ui', { type: 'noAutorize' })
-            .assignTo('autorize', {
+            .extend({ui: { type: 'noAutorize'} })
+            .extend({autorize: {
                 enable: false,
                 login: '',
                 pass: '',
                 msg: action.payload.msg,
-            })
-            .store;
+            }})
+            .state;
     }
 
-    return store;
+    return state;
 };
 
 export default { is, reducer };
+
+redux

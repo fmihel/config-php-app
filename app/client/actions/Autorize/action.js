@@ -1,6 +1,6 @@
 import router from 'fmihel-php-router-client';
 import { storage } from 'fmihel-browser-lib';
-import store from 'REDUX/store';
+import redux from 'REDUX';
 import * as consts from './consts';
 
 
@@ -28,5 +28,7 @@ const doAction = (autorize) => (dispatch) => {
             });
         });
 };
-const action = (autorize) => store.dispatch(doAction(autorize));
+const action = (autorize) => redux.store.dispatch(doAction(autorize));
 export default action;
+
+

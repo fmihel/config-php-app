@@ -7,15 +7,13 @@ import Row from 'COMPONENTS/Row.jsx';
 import Col from 'COMPONENTS/Col.jsx';
 import Nav from 'COMPONENTS/Nav.jsx';
 import NavMenu from 'COMPONENTS/NavMenu.jsx';
-import Debug from 'COMPONENTS/debug/DebugInfo.jsx';
 import Waiter from 'COMPONENTS/waiter/Waiter.jsx';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from 'react-router-dom';
-import { connect } from 'react-redux';
-import logout from './pages/Autorize/actions/Logout';
+import redux from 'REDUX';
 import pages from './pages';
 
 class App extends React.Component {
@@ -34,8 +32,8 @@ class App extends React.Component {
     }
 
     render() {
-        const { menu, redux } = this.props;
-        const { ui } = redux;
+        const { menu } = this.props;
+        const ui  = this.props.reduxData.ui;
         return (
             <Router basename={BASEPATH_HTML}>
                 <div id='up' >
@@ -61,7 +59,6 @@ class App extends React.Component {
                         </Row>
                     </Container>
                 </div>
-                {webpack.isDevelopment && <Debug/> }
                 <Waiter show={ui.state !== 'idle'}/>
             </Router>
         );
@@ -107,7 +104,7 @@ App.defaultProps = {
                 id: 'logout',
                 caption: 'logout',
                 onClick() {
-                    logout();
+                    redux.actions.Logout();
                 },
             },
         ],
@@ -116,8 +113,8 @@ App.defaultProps = {
 
 
 const mapStateToProps = (state) => ({
-    redux: state,
+    reduxData: state,
 });
 
 
-export default connect(mapStateToProps)(App);
+export default redux.connect(mapStateToProps)(App);

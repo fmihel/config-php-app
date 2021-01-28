@@ -1,12 +1,11 @@
 import { ut } from 'fmihel-browser-lib';
 import router from 'fmihel-php-router-client';
-import store from 'REDUX/store';
-import logout from './pages/Autorize/actions/Logout';
+import redux from 'REDUX';
 
 // в каждый ajax запрос присоединяем информацию об авторизации
 router().on('before', (e) => {
     if (e.id !== 'autorize') {
-        const state = store.getState();
+        const state = redux.getState();
         e.autorize = state.autorize;
     }
 });
@@ -16,6 +15,6 @@ router().on('before', (e) => {
 router().on('after', (from) => {
     // eslint-disable-next-line eqeqeq
     if ((from.res == 0) && (ut.get(from, 'data', 'autorize', 'enable', true) === false)) {
-        logout();
+        redux.actions.Logout();
     }
 });

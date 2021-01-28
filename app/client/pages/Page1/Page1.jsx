@@ -1,8 +1,8 @@
+import './data';
+import './actions';
 import React from 'react';
 import { binds, ut } from 'fmihel-browser-lib';
-import './data';
-import { connect } from 'react-redux';
-import actSend from './actions/Send';
+import redux from 'REDUX';
 
 class Page1 extends React.Component {
     constructor(p) {
@@ -11,7 +11,7 @@ class Page1 extends React.Component {
     }
 
     onSend() {
-        actSend(ut.random_str(5));
+        redux.actions.Send(ut.random_str(5));
     }
 
     render() {
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => ({
     page1: state.page1,
 });
 
-export default connect(mapStateToProps)(Page1);
+export default redux.connect(mapStateToProps)(Page1);

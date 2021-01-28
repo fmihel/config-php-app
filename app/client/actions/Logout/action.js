@@ -1,5 +1,5 @@
 import { storage } from 'fmihel-browser-lib';
-import store from 'REDUX/store';
+import redux from 'REDUX';
 import * as consts from './consts';
 
 const doAction = () => (dispatch) => {
@@ -8,5 +8,6 @@ const doAction = () => (dispatch) => {
         type: consts.LOGOUT,
     });
 };
-const action = () => store.dispatch(doAction());
+const action = () => redux.store.dispatch(doAction());
 export default action;
+

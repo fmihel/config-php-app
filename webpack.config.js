@@ -6,6 +6,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { defArg } = require('fmihel-server-lib');
 const ReplaceBefore = require('webpack-plugin-replace');
 const ReplaceAfter = require('replace-in-file-webpack-plugin');
+/*
+ webpack.local must consists path for run app:
+ Ex:
+ module.exports = {
+    PHP_ROUTER_ADDR: 'http://work/fmihel/config-php-app/app/server/',
+};
+ */
 const local = require('./webpack.local');
 
 const isDevelopment = defArg('dev');

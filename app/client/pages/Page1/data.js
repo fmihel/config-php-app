@@ -1,7 +1,8 @@
-import data from 'REDUX/data';
+import redux from 'REDUX';
 
-data.attach({
+redux.data.attach({
     page1: {
         msg: '',
     },
 });
+

@@ -9,7 +9,7 @@ export default class Waiter extends React.Component {
             w: 0,
             h: 0,
         };
-        $(window).resize(() => {
+        $(window).on('resize',() => {
             this.updatePos();
         });
     }

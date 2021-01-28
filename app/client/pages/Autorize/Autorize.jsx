@@ -1,14 +1,10 @@
-import './data';
+import redux from 'REDUX';
 import React from 'react';
 import { binds } from 'fmihel-browser-lib';
 import { connect } from 'react-redux';
 import Container from 'COMPONENTS/Container.jsx';
 import Row from 'COMPONENTS/Row.jsx';
 import Col from 'COMPONENTS/Col.jsx';
-import doAutorize from './actions/Autorize';
-
-// import actDebug from 'REDUX/Debug/action';
-
 
 class Autorize extends React.Component {
     constructor(p) {
@@ -22,7 +18,11 @@ class Autorize extends React.Component {
     }
 
     login() {
-        doAutorize({ ...this.props.autorize, login: this.state.login, pass: this.state.pass });
+        redux.actions.Autorize({ 
+            ...this.props.autorize, 
+            login: this.state.login, 
+            pass: this.state.pass 
+        });
     }
 
     onChange(e) {
@@ -76,3 +76,4 @@ const mapStateToProps = (state) => ({
 
 // wrap App in connect and pass in mapStateToProps
 export default connect(mapStateToProps)(Autorize);
+

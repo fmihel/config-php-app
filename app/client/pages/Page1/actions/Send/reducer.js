@@ -1,33 +1,33 @@
-import storing from 'REDUX/storing';
+import redux from 'REDUX';
 import * as consts from './consts';
 
 const is = (action) => [consts.SEND, consts.SEND_OK, consts.SEND_ERR].indexOf(action.type) >= 0;
-const reducer = (store, action) => {
+const reducer = (state, action) => {
     if (action.type === consts.SEND) {
-        return storing(store)
+        return redux.change(state)
             .idle(false)
-            .store;
+            .state;
     }
 
     if (action.type === consts.SEND_OK) {
         console.info(action.payload);
-        return storing(store)
+        return redux.change(state)
             .idle(true)
-            .assign({
+            .extend({
                 page1: {
                     ...action.payload,
                 },
             })
-            .store;
+            .state;
     }
 
     if (action.type === consts.SEND_ERR) {
-        return storing(store)
+        return redux.change(state)
             .idle(true)
-            .store;
+            .state;
     }
 
-    return store;
+    return state;
 };
 
 export default { is, reducer };

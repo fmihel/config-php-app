@@ -1,5 +1,5 @@
 import router from 'fmihel-php-router-client';
-import store from 'REDUX/store';
+import redux from 'REDUX';
 import * as consts from './consts';
 
 const doAction = (msg) => (dispatch) => {
@@ -24,5 +24,5 @@ const doAction = (msg) => (dispatch) => {
             });
         });
 };
-const action = (msg) => store.dispatch(doAction(msg));
+const action = (msg) => redux.store.dispatch(doAction(msg));
 export default action;
