@@ -48,16 +48,16 @@
         },
         {
             "name": "fmihel/php-lib",
-            "version": "v2.2.1",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fmihel/php-lib.git",
-                "reference": "e4dab3bdbaef52c0612fa4834f8fc182d4c2f821"
+                "reference": "fbd1118da6ae9b3bd930e6cb7bce140b66ca6205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/php-lib/zipball/e4dab3bdbaef52c0612fa4834f8fc182d4c2f821",
-                "reference": "e4dab3bdbaef52c0612fa4834f8fc182d4c2f821",
+                "url": "https://api.github.com/repos/fmihel/php-lib/zipball/fbd1118da6ae9b3bd930e6cb7bce140b66ca6205",
+                "reference": "fbd1118da6ae9b3bd930e6cb7bce140b66ca6205",
                 "shasum": ""
             },
             "require-dev": {
@@ -83,9 +83,9 @@
             "description": "php,lib,library",
             "support": {
                 "issues": "https://github.com/fmihel/php-lib/issues",
-                "source": "https://github.com/fmihel/php-lib/tree/v2.2.1"
+                "source": "https://github.com/fmihel/php-lib/tree/v2.3.1"
             },
-            "time": "2021-09-06T12:26:01+00:00"
+            "time": "2021-11-23T10:33:51+00:00"
         },
         {
             "name": "fmihel/php-router",
@@ -93,12 +93,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fmihel/php-router.git",
-                "reference": "99c3e964f7c79b292c27cd3187c27b5e08b38d0b"
+                "reference": "d5ea8a1ba8f2c8a1b69c064e551c3c532bd17352"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/php-router/zipball/99c3e964f7c79b292c27cd3187c27b5e08b38d0b",
-                "reference": "99c3e964f7c79b292c27cd3187c27b5e08b38d0b",
+                "url": "https://api.github.com/repos/fmihel/php-router/zipball/d5ea8a1ba8f2c8a1b69c064e551c3c532bd17352",
+                "reference": "d5ea8a1ba8f2c8a1b69c064e551c3c532bd17352",
                 "shasum": ""
             },
             "require": {
@@ -127,9 +127,9 @@
             "description": "php,router",
             "support": {
                 "issues": "https://github.com/fmihel/php-router/issues",
-                "source": "https://github.com/fmihel/php-router/tree/v3.1.1"
+                "source": "https://github.com/fmihel/php-router/tree/v3.2.1"
             },
-            "time": "2021-08-23T07:32:42+00:00"
+            "time": "2021-10-07T12:41:06+00:00"
         }
     ],
     "packages-dev": [],
