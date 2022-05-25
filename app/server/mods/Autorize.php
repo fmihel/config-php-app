@@ -1,7 +1,7 @@
 <?php
 use fmihel\router\Route;
 use fmihel\console;
-use fmihel\lib\Config;
+use fmihel\config\Config;
 
 class Autorize extends Route{
     public static  $users;

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e25eeaa57e4681be4c92b00f1b1b5fd3",
+    "content-hash": "29cb7f1ea2db7fe326d6171e4ae5d5fb",
     "packages": [
         {
             "name": "fmihel/console-log",
@@ -47,22 +47,63 @@
             "time": "2020-01-31T07:40:00+00:00"
         },
         {
-            "name": "fmihel/php-lib",
-            "version": "v2.3.1",
+            "name": "fmihel/php-config",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fmihel/php-lib.git",
-                "reference": "fbd1118da6ae9b3bd930e6cb7bce140b66ca6205"
+                "url": "https://github.com/fmihel/php-config.git",
+                "reference": "feb525c93d0d585026cff294f57d631f1c20de00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/php-lib/zipball/fbd1118da6ae9b3bd930e6cb7bce140b66ca6205",
-                "reference": "fbd1118da6ae9b3bd930e6cb7bce140b66ca6205",
+                "url": "https://api.github.com/repos/fmihel/php-config/zipball/feb525c93d0d585026cff294f57d631f1c20de00",
+                "reference": "feb525c93d0d585026cff294f57d631f1c20de00",
                 "shasum": ""
             },
             "require-dev": {
-                "fmihel/console-log": "^0.0.3",
-                "phpunit/phpunit": "^8.5"
+                "fmihel/console-log": "*",
+                "phpunit/phpunit": "8.5.23"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "fmihel\\config\\": "source"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "fmihel",
+                    "email": "fmihel76@gmail.com"
+                }
+            ],
+            "description": "php config loader",
+            "support": {
+                "issues": "https://github.com/fmihel/php-config/issues",
+                "source": "https://github.com/fmihel/php-config/tree/v0.1.0"
+            },
+            "time": "2022-05-04T08:27:12+00:00"
+        },
+        {
+            "name": "fmihel/php-lib",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fmihel/php-lib.git",
+                "reference": "fe47f368af01477cc7daf43f954803e12f428069"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fmihel/php-lib/zipball/fe47f368af01477cc7daf43f954803e12f428069",
+                "reference": "fe47f368af01477cc7daf43f954803e12f428069",
+                "shasum": ""
+            },
+            "require-dev": {
+                "fmihel/console-log": "*",
+                "phpunit/phpunit": "8.5.23"
             },
             "type": "library",
             "autoload": {
@@ -83,9 +124,9 @@
             "description": "php,lib,library",
             "support": {
                 "issues": "https://github.com/fmihel/php-lib/issues",
-                "source": "https://github.com/fmihel/php-lib/tree/v2.3.1"
+                "source": "https://github.com/fmihel/php-lib/tree/v3.0.0"
             },
-            "time": "2021-11-23T10:33:51+00:00"
+            "time": "2022-04-30T19:06:54+00:00"
         },
         {
             "name": "fmihel/php-router",
@@ -93,19 +134,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fmihel/php-router.git",
-                "reference": "d5ea8a1ba8f2c8a1b69c064e551c3c532bd17352"
+                "reference": "73f57eb728c16c87679a6105f2c74a5acb4e6b5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fmihel/php-router/zipball/d5ea8a1ba8f2c8a1b69c064e551c3c532bd17352",
-                "reference": "d5ea8a1ba8f2c8a1b69c064e551c3c532bd17352",
+                "url": "https://api.github.com/repos/fmihel/php-router/zipball/73f57eb728c16c87679a6105f2c74a5acb4e6b5c",
+                "reference": "73f57eb728c16c87679a6105f2c74a5acb4e6b5c",
                 "shasum": ""
             },
             "require": {
-                "fmihel/php-lib": "^2.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5"
+                "fmihel/php-lib": "^3.0.0"
             },
             "default-branch": true,
             "type": "library",
@@ -127,9 +165,9 @@
             "description": "php,router",
             "support": {
                 "issues": "https://github.com/fmihel/php-router/issues",
-                "source": "https://github.com/fmihel/php-router/tree/v3.2.1"
+                "source": "https://github.com/fmihel/php-router/tree/v3.2.3"
             },
-            "time": "2021-10-07T12:41:06+00:00"
+            "time": "2022-05-03T15:31:56+00:00"
         }
     ],
     "packages-dev": [],
